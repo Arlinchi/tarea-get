@@ -41,12 +41,14 @@ $(document).ready(function () {
     //muestra el modal myModal escondido cuando el usuario hace click en el id #modal
     $('#modal').click(function () {
         // $(".modal").attr("style", "display:block")
-        $(".modal").show()
+        // $(".modal").show()
+        $(".modal").modal('show');
     });
     //esconde el modal myModal cuando el usuario hace click en la clase .close
     $('.close').click(function () {
         // $(".modal").attr("style", "display:none")
-        $(".modal").hide()
+        // $(".modal").hide()
+        $(".modal").modal('hide');
     });
 
 
