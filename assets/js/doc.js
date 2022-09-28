@@ -16,7 +16,7 @@ $(document).ready(function () {
         console.log("agregar");
         $.get('https://my-json-server.typicode.com/alaravena/ldp3101/usuarios',
             function (data) {
-              
+
                 $.each(data, function (i, item) {
                     $('#tabla').append(
                         '<tr><td>' + item.id + '</td><td>' +
@@ -28,7 +28,7 @@ $(document).ready(function () {
                         item.avatar
                         + '></td><td><button id="eliminar" class="eliminar" type="button">Eliminar</button></td></tr>');
                 });
-                
+
                 $('.eliminar').click(function () {
                     var index = $('.eliminar').index(this) + 1
                     console.log(index);
@@ -37,6 +37,16 @@ $(document).ready(function () {
                 });
 
             });
+    });
+    //muestra el modal myModal escondido cuando el usuario hace click en el id #modal
+    $('#modal').click(function () {
+        const modalArray = document.getElementsByClassName("modal");
+        modalArray["myModal"].style.display = "block";
+    });
+    //esconde el modal myModal cuando el usuario hace click en la clase .close
+    $('.close').click(function () {
+        const modalArray = document.getElementsByClassName("modal");
+        modalArray["myModal"].style.display = "none";
     });
 
 
