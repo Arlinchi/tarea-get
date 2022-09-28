@@ -40,13 +40,11 @@ $(document).ready(function () {
     });
     //muestra el modal myModal escondido cuando el usuario hace click en el id #modal
     $('#modal').click(function () {
-        const modalArray = document.getElementsByClassName("modal");
-        modalArray["myModal"].style.display = "block";
+        $(".modal").attr("style", "display:block")
     });
     //esconde el modal myModal cuando el usuario hace click en la clase .close
     $('.close').click(function () {
-        const modalArray = document.getElementsByClassName("modal");
-        modalArray["myModal"].style.display = "none";
+        $(".modal").attr("style", "display:none")
     });
 
 
