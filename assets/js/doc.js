@@ -19,14 +19,14 @@ $(document).ready(function () {
 
                 $.each(data, function (i, item) {
                     $('#tabla').append(
-                        '<tr><td>' + item.id + '</td><td>' +
+                        '<tr><td class="numerito">' + item.id + '</td><td>' +
                         item.nombre +
                         '</td><td>' +
                         item.email + '</td><td>' + '</td><td>' +
                         item.edad +
                         '</td><td><img src=' +
                         item.avatar
-                        + '></td><td><button id="eliminar" class="eliminar" type="button">Eliminar</button></td></tr>');
+                        + '></td><td><button id="eliminar" class="eliminar" type="button">Eliminar</button></td><td><button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">Modal</button></td></tr>');
                 });
 
                 $('.eliminar').click(function () {
@@ -36,12 +36,19 @@ $(document).ready(function () {
                     probando[index].remove();
                 });
 
-            });
+                var id = $('.numerito');
+                //var nombre = item.nombre;
+               // var email = item.email;
+               // var edad = item.edad;
+                var modalbody = $('.modal-body');
+
+                $('.btn-modal').click(function(){
+                    $('tr').show(modalbody.text(numerito));
+                });
+
+           });
     });
-
-
-
-
+ 
 });
 
 
